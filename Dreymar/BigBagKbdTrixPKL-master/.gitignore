@@ -1,0 +1,14 @@
+*_gitignore*
+*_bak*
+*_backup*
+*_old*
+*_WIP*
+*_tmp*
+*_temp*
+*Shortcut.*
+*desktop.ini
+* Copy*
+Layouts/*/*ImgGen_*
+Layouts/*/*/*ImgGen_*
+*PKL.exe
+EPKL_*able*.zip
