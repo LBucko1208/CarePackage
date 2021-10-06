@@ -12,16 +12,11 @@ set autoindent
 " Enable backspace to work as it should
 set backspace=indent,eol,start
 
-" Set default clipboard to '*'
-set clipboard=unnamed
-
 " Set look of vim (comment out if not wanted)
 set guifont=Consolas:h10
 set guioptions-=T
 colorscheme industry
 syntax on
-set lines=80
-set columns=120
 
 " Set encoding to UTF-8 (prikazivanje palatala)
 set encoding=utf-8
@@ -29,6 +24,7 @@ set fileencoding=utf-8
 
 " Bind <Space> to insert new line in normal mode
 noremap <Space> o<Esc>
+
 
 " Bind keys to insert a matching pair
 " Bind keys to insert speed up adding empty key pair
