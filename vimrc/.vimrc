@@ -12,14 +12,14 @@ set autoindent
 " Enable backspace to work as it should
 set backspace=indent,eol,start
 
-" Set look of vim (comment out if not wanted)
-set guifont=Consolas:h10
-set guioptions-=T
-colorscheme industry
-syntax on
+"" Set look of vim (comment out if not wanted)
+" set guifont=Consolas:h10
+" set guioptions-=T
+" colorscheme industry
+" syntax on
 
 " Set default register to system clipboard
-set clipboard=unnamed
+set clipboard=unnamedplus
 
 " Set encoding to UTF-8 (prikazivanje palatala)
 set encoding=utf-8
