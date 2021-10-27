@@ -322,11 +322,11 @@ xkb_symbols "lv5" {
                    NoAction()           , NoAction()           ]
                };  // ] }
     key <BKSL> { symbols[Group1]=[ NoSymbol , NoSymbol , NoSymbol , NoSymbol ,
-                   XF86Favorites        , XF86MyComputer        , // BrFav
-                   colon                , bar                  ], //  :
+                   Caps_Lock            , Caps_Lock             , // Caps_Lock
+                   Caps_Lock            , Caps_Lock            ], // Caps_Lock
                  actions[Group1]=[NoAction(),NoAction(),NoAction(),NoAction(),
-                   Redirect(key=<I164>,clearmods=all), Redirect(key=<I165>,clearmods=all), // <I164>/<I165>(‡‡)
-                   NoAction()           , NoAction()           ]
+                   LockMods(mods=Lock)   , LockMods(mods=Lock)   , // Lock mod for <CAPS>
+                   LockMods(mods=Lock)   , LockMods(mods=Lock)  ]  // Lock mod for <CAPS>
                };  // \ |
 
     key <AC01> { symbols[Group1]=[ NoSymbol , NoSymbol , NoSymbol , NoSymbol ,

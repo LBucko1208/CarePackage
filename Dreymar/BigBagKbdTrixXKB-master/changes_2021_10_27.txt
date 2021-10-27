@@ -1,2 +1,2 @@
 1.) ./xkb-data_xmod/xkb/symbols/colemak changed "cme_ed_letters" variant
-2.) 
+2.) ./xkb-data_xmod/xkb/symbols/extend changed <BKSL> to CapsLock
