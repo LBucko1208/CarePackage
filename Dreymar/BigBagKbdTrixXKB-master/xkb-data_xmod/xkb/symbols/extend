@@ -245,7 +245,7 @@ xkb_symbols "lv5" {
                    Redirect(key=<HOME>,clearmods=LevelFive), Redirect(key=<HOME>,clearmods=LevelFive) ] // <HOME>
                };  // Q
     key <AD02> { symbols[Group1]=[ NoSymbol , NoSymbol , NoSymbol , NoSymbol ,
-                   XF86ScrollUp         , XF86ScrollUp          , // ScrollUp(††)
+                   Up                   , Up                    , // ScrollUp(††)
                    Up                   , KP_Up                ], //  ↑
                  actions[Group1]=[NoAction(),NoAction(),NoAction(),NoAction(),
                    PtrBtn(button=4)     , PtrBtn(button=4)      , // PtrWhBtUp/Ri
@@ -337,7 +337,7 @@ xkb_symbols "lv5" {
                    NoAction()           , NoAction()           ]
                };  // QWE A, Cmk A
     key <AC02> { symbols[Group1]=[ NoSymbol , NoSymbol , NoSymbol , NoSymbol ,
-                   XF86ScrollDown       , XF86ScrollDown        , // ScrollDown(††)
+                   Down                 , Down                  , // ScrollDown(††)
                    Down                 , KP_Down              ], //  ↓
                  actions[Group1]=[NoAction(),NoAction(),NoAction(),NoAction(),
                    PtrBtn(button=5)     , PtrBtn(button=5)      , // PtrWhBtDn/Le
