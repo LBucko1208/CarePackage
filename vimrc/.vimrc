@@ -1,5 +1,33 @@
+"""" Setup for plugins
+"set nocompatible
+"filetype off
+"
+"set rtp+=~/vimfiles/bundle/vundle/
+"
+"" Import plugins
+"call vundle#begin()
+"
+"Plugin 'VundleVim/Vundle.vim'
+"Plugin 'vim-airline/vim-airline'
+"Plugin 'vim-airline/vim-airline-themes'
+"Plugin 'preservim/nerdtree'
+"
+"call vundle#end()
+"filetype plugin indent on
+"
+"" Vim-airline setup
+"let g:airline#extensions#tabline#enabled = 1
+"
+"" NERDtree setup
+"nnoremap <C-n> :NERDTreeToggle<CR>
+
+
 " Enable line numbers
 set number
+
+" Wildmenu for autocompletion
+set nowildmenu
+set wildmode=list:full
 
 " Set tab to 4 spaces
 set tabstop=4
@@ -26,8 +54,11 @@ set encoding=utf-8
 set fileencoding=utf-8
 
 " Bind <Space> to insert new line in normal mode
-noremap <Space> o<Esc>
+noremap <Space> :w<CR>
 
+" Bind for changing buffers
+noremap <Leader>y :bn<CR>
+noremap <Leader>e :bp<CR>
 
 " Bind keys to insert a matching pair
 " Bind keys to insert speed up adding empty key pair

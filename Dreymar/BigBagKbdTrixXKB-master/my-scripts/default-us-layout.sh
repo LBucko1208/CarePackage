@@ -1,4 +1,6 @@
 #!/bin/sh
 
-setxkbmap -option
-setxkbmap -layout us
+/usr/bin/setxkbmap -option
+#/usr/bin/setxkbmap -option lv5:caps_switch_lock,misc:extend
+/usr/bin/setxkbmap -layout us
+

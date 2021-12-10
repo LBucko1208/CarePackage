@@ -1,0 +1,35 @@
+[global_config]
+  title_font = Ubuntu 8
+[keybindings]
+  zoom_in = <Primary>equal
+  new_tab = <Primary><Alt>t
+  split_horiz = <Primary><Alt>d
+  split_vert = <Primary><Alt>r
+  paste = <Primary>v
+  next_tab = None
+  new_window = <Primary><Alt>n
+  broadcast_off = None
+  broadcast_group = None
+  broadcast_all = None
+[profiles]
+  [[default]]
+    background_color = "#282828"
+    background_darkness = 0.82
+    background_type = transparent
+    cursor_color = "#aaaaaa"
+    font = Ubuntu Mono 10
+    foreground_color = "#ebdbb2"
+    show_titlebar = False
+    scrollback_lines = 2000
+    use_system_font = False
+    copy_on_selection = True
+[layouts]
+  [[default]]
+    [[[window0]]]
+      type = Window
+      parent = ""
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+      profile = default
+[plugins]
