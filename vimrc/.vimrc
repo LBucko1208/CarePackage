@@ -1,29 +1,30 @@
-"""" Setup for plugins
-"set nocompatible
-"filetype off
-"
-"set rtp+=~/vimfiles/bundle/vundle/
-"
-"" Import plugins
-"call vundle#begin()
-"
-"Plugin 'VundleVim/Vundle.vim'
-"Plugin 'vim-airline/vim-airline'
-"Plugin 'vim-airline/vim-airline-themes'
-"Plugin 'preservim/nerdtree'
-"
-"call vundle#end()
-"filetype plugin indent on
-"
-"" Vim-airline setup
-"let g:airline#extensions#tabline#enabled = 1
-"
-"" NERDtree setup
-"nnoremap <C-n> :NERDTreeToggle<CR>
+" Setup for plugins
+set nocompatible
+filetype off
 
+set rtp+=~/vimfiles/bundle/vundle/
+
+" Import plugins
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'preservim/nerdtree'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'tpope/vim-surround'
+
+call vundle#end()
+filetype plugin indent on
+
+" Vim-airline setup
+let g:airline#extensions#tabline#enabled = 1
+
+" NERDtree setup
+nnoremap <C-n> :NERDTreeToggle<CR>
 
 " Enable line numbers
-set number
+set relativenumber
 
 " Wildmenu for autocompletion
 set nowildmenu
@@ -56,9 +57,32 @@ set fileencoding=utf-8
 " Bind <Space> to insert new line in normal mode
 noremap <Space> :w<CR>
 
+" Bind <Home> button to move to first non-blank character
+noremap <Home> ^
+inoremap <Home> <Esc>^i
+
 " Bind for changing buffers
 noremap <Leader>y :bn<CR>
-noremap <Leader>e :bp<CR>
+noremap <Leader>l :bp<CR>
+
+" Bind for closing buffer
+noremap <Leader>d :bd<CR>
+
+" Bind for changing windows
+noremap <Leader>n <C-w>h
+noremap <Leader>e <C-w>j
+noremap <Leader>u <C-w>k
+noremap <Leader>i <C-w>l
+
+" Bind for changing window size (vidjet za ovo!!)
+" noremap <Leader><C-n> 20<C-w><
+" noremap <Leader><C-e> 10<C-w>-
+" noremap <Leader><C-u> 10<C-w>+
+" noremap <Leader><C-i> 20<C-w>>
+
+" Bind for scrolling with mouse wheel
+" And also better mouse control in vim
+set mouse=a
 
 " Bind keys to insert a matching pair
 " Bind keys to insert speed up adding empty key pair
@@ -89,12 +113,12 @@ inoremap (( (
 
 
 " Tools for drawing tables
-map <Leader>q R+---+<Esc>
-map <Leader>w R+-----+<Esc>
-map <Leader>f R+-----------+<Esc>
-map <Leader>p R+-----------------------+<Esc>
-map <Leader>a R\|   \|<Esc>
-map <Leader>r R\|     \|<Esc>
-map <Leader>s R\|           \|<Esc>
-map <Leader>t R\|                       \|<Esc>
+" map <Leader>q R+---+<Esc>
+" map <Leader>w R+-----+<Esc>
+" map <Leader>f R+-----------+<Esc>
+" map <Leader>p R+-----------------------+<Esc>
+" map <Leader>a R\|   \|<Esc>
+" map <Leader>r R\|     \|<Esc>
+" map <Leader>s R\|           \|<Esc>
+" map <Leader>t R\|                       \|<Esc>
 

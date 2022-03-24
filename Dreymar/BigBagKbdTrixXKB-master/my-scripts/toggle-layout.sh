@@ -7,6 +7,6 @@ if [ -z "$CURR_STATE" ]
 then
     $PATH/buci-colemak-with-extend.sh
 else
-    $PATH/default-us-layout.sh
+    $PATH/us-layout.sh
 fi
 
