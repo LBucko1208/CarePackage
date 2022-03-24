@@ -6,6 +6,9 @@ set clipboard=unnamedplus
 " Enable line numbers
 set relativenumber
 
+" Set padding when moving around
+set so=16
+
 " Bind <Home> button to move to first non-blank character
 noremap <Home> ^
 inoremap <Home> <Esc>^i

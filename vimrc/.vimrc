@@ -23,8 +23,12 @@ let g:airline#extensions#tabline#enabled = 1
 " NERDtree setup
 nnoremap <C-n> :NERDTreeToggle<CR>
 
+
 " Enable line numbers
 set relativenumber
+
+" Set padding when moving around
+set so=16
 
 " Wildmenu for autocompletion
 set nowildmenu
