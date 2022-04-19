@@ -7,7 +7,7 @@ set clipboard=unnamedplus
 set relativenumber
 
 " Set padding when moving around
-set so=16
+set so=10
 
 " Bind <Home> button to move to first non-blank character
 noremap <Home> ^
@@ -25,3 +25,7 @@ noremap <Leader>n <C-w>h
 noremap <Leader>e <C-w>j
 noremap <Leader>u <C-w>k
 noremap <Leader>i <C-w>l
+
+" Bind <Control> + arrows to move further
+noremap <C-Up> 10<Up>
+noremap <C-Down> 10<Down>

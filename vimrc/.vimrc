@@ -1,4 +1,4 @@
-" Setup for plugins
+" PLUGINS:
 set nocompatible
 filetype off
 
@@ -10,25 +10,28 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-Plugin 'preservim/nerdtree'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-surround'
+Plugin 'mattn/emmet-vim'
+Plugin 'preservim/nerdtree'
+Plugin 'bling/vim-bufferline'
+Plugin 'tpope/vim-commentary'
 
 call vundle#end()
 filetype plugin indent on
 
-" Vim-airline setup
-let g:airline#extensions#tabline#enabled = 1
+" ====================
+" NERDTree:
+execute "set <M-1>=\e1"
+nnoremap <M-1> :NERDTreeToggle<CR>
 
-" NERDtree setup
-nnoremap <C-n> :NERDTreeToggle<CR>
-
-
+" ====================
+" GENERAL SETTINGS:
 " Enable line numbers
 set relativenumber
 
 " Set padding when moving around
-set so=16
+set so=10
 
 " Wildmenu for autocompletion
 set nowildmenu
@@ -45,12 +48,6 @@ set autoindent
 " Enable backspace to work as it should
 set backspace=indent,eol,start
 
-"" Set look of vim (comment out if not wanted)
-" set guifont=Consolas:h10
-" set guioptions-=T
-" colorscheme industry
-" syntax on
-
 " Set default register to system clipboard
 set clipboard=unnamedplus
 
@@ -58,6 +55,22 @@ set clipboard=unnamedplus
 set encoding=utf-8
 set fileencoding=utf-8
 
+" Automatically refresh file when it changes
+set autoread
+
+" Show commands
+set showcmd
+
+" File searching
+set path=,,**
+set wildignore+=**/target/**
+
+" Bind for scrolling with mouse wheel
+" And also better mouse control in vim
+set mouse=a
+
+" ====================
+" REMAPS:
 " Bind <Space> to insert new line in normal mode
 noremap <Space> :w<CR>
 
@@ -84,9 +97,9 @@ noremap <Leader>i <C-w>l
 " noremap <Leader><C-u> 10<C-w>+
 " noremap <Leader><C-i> 20<C-w>>
 
-" Bind for scrolling with mouse wheel
-" And also better mouse control in vim
-set mouse=a
+" Bind <Control> + arrows to move further
+noremap <C-Up> 10<Up>
+noremap <C-Down> 10<Down>
 
 " Bind keys to insert a matching pair
 " Bind keys to insert speed up adding empty key pair
@@ -115,7 +128,6 @@ inoremap (( (
 " inoremap <> <>
 " inoremap << <
 
-
 " Tools for drawing tables
 " map <Leader>q R+---+<Esc>
 " map <Leader>w R+-----+<Esc>
@@ -125,4 +137,9 @@ inoremap (( (
 " map <Leader>r R\|     \|<Esc>
 " map <Leader>s R\|           \|<Esc>
 " map <Leader>t R\|                       \|<Esc>
+
+" ====================
+" SNIPPETS:
+nnoremap ,jspheader :-1read $HOME/.vimsnippets/.jspheader<CR>
+nnoremap ,servlet :-1read $HOME/.vimsnippets/.servlet<CR>
 
