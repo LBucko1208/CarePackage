@@ -4,30 +4,31 @@ filetype off
 
 set rtp+=~/vimfiles/bundle/vundle/
 
-" Import plugins
-call vundle#begin()
-
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'tpope/vim-surround'
-Plugin 'mattn/emmet-vim'
-Plugin 'preservim/nerdtree'
-Plugin 'bling/vim-bufferline'
-Plugin 'tpope/vim-commentary'
-
-call vundle#end()
-filetype plugin indent on
+"" Import plugins
+"call vundle#begin()
+"
+"Plugin 'VundleVim/Vundle.vim'
+"Plugin 'vim-airline/vim-airline'
+"Plugin 'vim-airline/vim-airline-themes'
+"Plugin 'airblade/vim-gitgutter'
+"Plugin 'tpope/vim-surround'
+"Plugin 'mattn/emmet-vim'
+"Plugin 'preservim/nerdtree'
+"Plugin 'bling/vim-bufferline'
+"Plugin 'tpope/vim-commentary'
+"
+"call vundle#end()
+"filetype plugin indent on
 
 " ====================
-" NERDTree:
-execute "set <M-1>=\e1"
-nnoremap <M-1> :NERDTreeToggle<CR>
+"" NERDTree:
+"execute "set <M-1>=\e1"
+"nnoremap <M-1> :NERDTreeToggle<CR>
 
 " ====================
 " GENERAL SETTINGS:
 " Enable line numbers
+set number
 set relativenumber
 
 " Set padding when moving around
@@ -115,28 +116,33 @@ inoremap {<CR> {<CR>}<Esc>O
 inoremap {} {}
 inoremap {{ {
 
-" inoremap [ []<Left>
-" inoremap [] []
-" inoremap [[ [
+"inoremap [ []<Left>
+"inoremap [] []
+"inoremap [[ [
 
 inoremap ( ()<Left>
 inoremap (<CR> (<CR>)<Esc>O
 inoremap () ()
 inoremap (( (
 
-" inoremap < <><Left>
-" inoremap <> <>
-" inoremap << <
+"inoremap < <><Left>
+"inoremap <> <>
+"inoremap << <
 
 " Tools for drawing tables
-" map <Leader>q R+---+<Esc>
-" map <Leader>w R+-----+<Esc>
-" map <Leader>f R+-----------+<Esc>
-" map <Leader>p R+-----------------------+<Esc>
-" map <Leader>a R\|   \|<Esc>
-" map <Leader>r R\|     \|<Esc>
-" map <Leader>s R\|           \|<Esc>
-" map <Leader>t R\|                       \|<Esc>
+"map <Leader>q R+---+<Esc>
+"map <Leader>w R+-----+<Esc>
+"map <Leader>f R+-----------+<Esc>
+"map <Leader>p R+-----------------------+<Esc>
+"map <Leader>a R\|   \|<Esc>
+"map <Leader>r R\|     \|<Esc>
+"map <Leader>s R\|           \|<Esc>
+"map <Leader>t R\|                       \|<Esc>
+
+" Binds for copying and deleting whole files
+noremap yaa mtggyG`t
+noremap daa mtggdG`t
+noremap vaa mtggVG
 
 " ====================
 " SNIPPETS:

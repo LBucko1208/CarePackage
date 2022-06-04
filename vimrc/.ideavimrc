@@ -4,6 +4,7 @@ Plug 'vim-surround'
 set clipboard=unnamedplus
 
 " Enable line numbers
+set number
 set relativenumber
 
 " Set padding when moving around
