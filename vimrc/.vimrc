@@ -22,7 +22,6 @@ set rtp+=~/vimfiles/bundle/vundle/
 
 " ====================
 "" NERDTree:
-"execute "set <M-1>=\e1"
 "nnoremap <M-1> :NERDTreeToggle<CR>
 
 " ====================
