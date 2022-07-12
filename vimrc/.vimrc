@@ -30,6 +30,12 @@ set rtp+=~/vimfiles/bundle/vundle/
 set number
 set relativenumber
 
+"" Set look of vim (comment out if not wanted)
+"set guifont=Consolas:h10
+"set guioptions-=T
+"colorscheme industry
+syntax on
+
 " Set padding when moving around
 set so=10
 
@@ -49,7 +55,7 @@ set autoindent
 set backspace=indent,eol,start
 
 " Set default register to system clipboard
-set clipboard=unnamedplus
+set clipboard=unnamed
 
 " Set encoding to UTF-8 (prikazivanje palatala)
 set encoding=utf-8
@@ -144,7 +150,7 @@ noremap daa mtggdG`t
 noremap vaa mtggVG
 
 " ====================
-" SNIPPETS:
-nnoremap ,jspheader :-1read $HOME/.vimsnippets/.jspheader<CR>
-nnoremap ,servlet :-1read $HOME/.vimsnippets/.servlet<CR>
+"" SNIPPETS:
+"nnoremap ,jspheader :-1read $HOME/.vimsnippets/.jspheader<CR>
+"nnoremap ,servlet :-1read $HOME/.vimsnippets/.servlet<CR>
 
