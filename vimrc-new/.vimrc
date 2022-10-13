@@ -4,30 +4,12 @@ filetype off
 
 set rtp+=~/vimfiles/bundle/vundle/
 
-"" Import plugins
-"call vundle#begin()
-"
-"Plugin 'VundleVim/Vundle.vim'
-"Plugin 'vim-airline/vim-airline'
-"Plugin 'vim-airline/vim-airline-themes'
-"Plugin 'airblade/vim-gitgutter'
-"Plugin 'tpope/vim-surround'
-"Plugin 'mattn/emmet-vim'
-"Plugin 'preservim/nerdtree'
-"Plugin 'bling/vim-bufferline'
-"Plugin 'tpope/vim-commentary'
-"
-"call vundle#end()
-"filetype plugin indent on
-
 " ====================
 "" NERDTree:
 nnoremap <Leader>t :NERDTreeToggle<CR>
 
 "" LExplore
 "nnoremap <Leader>t :Lexplore<CR>
-
-
 
 " ====================
 " GENERAL SETTINGS:
@@ -90,7 +72,7 @@ if &term =~ '^screen'
 endif
 
 " WSL yank support
-let s:clip = '/mnt/c/Windows/System32/clip.exe'
+let s:clip = '/mnt/c/Windwos/System32/clip.exe' "change the path to your mount point
 if executable(s:clip)
     augroup WSLYank
         autocmd!
