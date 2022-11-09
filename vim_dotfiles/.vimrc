@@ -5,9 +5,9 @@ set number
 set relativenumber
 
 "" Set look of vim (comment out if not wanted)
-"set guifont=Consolas:h10
-"set guioptions-=T
-"colorscheme industry
+set guifont=Consolas:h10
+set guioptions-=T
+colorscheme industry
 syntax on
 
 " Set padding when moving around
