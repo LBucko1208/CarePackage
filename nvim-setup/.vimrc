@@ -1,10 +1,3 @@
-"" PLUGINS
-" ====================
-"" NERDTree:
-" --------------------
-nnoremap <Leader>t :NERDTreeToggle<CR>
-let NERDTreeQuitOnOpen=1
-
 " ====================
 " GENERAL SETTINGS:
 " Enable line numbers
@@ -66,12 +59,16 @@ endif
 
 " ====================
 " REMAPS:
-" Bind <Space> to insert new line in normal mode
-noremap <Space> :w<CR>
+
+" Map leader to <Space>
+let mapleader = " "
 
 " Bind <Home> button to move to first non-blank character
 noremap <Home> ^
 inoremap <Home> <Esc>^i
+
+" Bind for saving and :noh
+noremap <Leader>s :noh<CR>:w<CR>
 
 " Bind for changing buffers
 noremap <Leader>y :bn<CR>
@@ -87,10 +84,10 @@ noremap <Leader>u <C-w>k
 noremap <Leader>i <C-w>l
 
 " Bind for changing window size (vidjet za ovo!!)
-noremap <Leader><C-n> 20<C-w><
-noremap <Leader><C-e> 10<C-w>-
-noremap <Leader><C-u> 10<C-w>+
-noremap <Leader><C-i> 20<C-w>>
+noremap <Leader><C-Left> 20<C-w><
+noremap <Leader><C-Down> 10<C-w>-
+noremap <Leader><C-Up> 10<C-w>+
+noremap <Leader><C-Right> 20<C-w>>
 
 " Bind <Control> + arrows to move further
 noremap <C-Up> 10<Up>

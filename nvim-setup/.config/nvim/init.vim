@@ -2,10 +2,12 @@ set runtimepath^=~/.vim runtimepath+=~/.vim/after
 let &packpath = &runtimepath
 source ~/.vimrc
 
-execute ""
-
+" PLUGINS
+" ====================
 "" NERDTree:
-"" Map Tree to <Alt+1>
-"execute "set <M-1>=\<Esc>1"
-"nnoremap <M-1> :NERDTreeToggle<CR>
+" --------------------
+"" Map Tree to <Alt+q>
+nnoremap <M-q> :NERDTreeToggle<CR>
+
+let NERDTreeQuitOnOpen=1
 
