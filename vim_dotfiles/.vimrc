@@ -123,7 +123,7 @@ inoremap (( (
 
 " Binds for copying and deleting whole files
 noremap yaa mtggyG`t
-noremap daa mtggdG`t
+noremap daa ggdG
 noremap vaa mtggVG
 
 " ====================
