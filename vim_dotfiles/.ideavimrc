@@ -43,3 +43,8 @@ noremap <Leader><C-Right> 20<C-w>>
 " Bind <Control> + arrows to move further
 noremap <C-Up> 10<Up>
 noremap <C-Down> 10<Down>
+
+" Binds for copying and deleting whole files
+noremap yaa mtggyG`t
+noremap daa mtggdG`t
+noremap vaa mtggVG
