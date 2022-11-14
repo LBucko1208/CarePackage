@@ -30,6 +30,7 @@ set backspace=indent,eol,start
 
 " Set default register to system clipboard
 set clipboard=unnamedplus
+set clipboard+=unnamed
 
 " Set encoding to UTF-8 (prikazivanje palatala)
 set encoding=utf-8

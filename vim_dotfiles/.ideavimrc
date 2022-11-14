@@ -1,7 +1,8 @@
 Plug 'vim-surround'
 
 " Set default register to system clipboard
-set clipboard=unnamed
+set clipboard=unnamedplus
+set clipboard+=unnamed
 
 " Enable line numbers
 set number
@@ -32,6 +33,12 @@ noremap <Leader>n <C-w>h
 noremap <Leader>e <C-w>j
 noremap <Leader>u <C-w>k
 noremap <Leader>i <C-w>l
+
+" Bind for changing window size (vidjet za ovo!!)
+noremap <Leader><C-Left> 20<C-w><
+noremap <Leader><C-Down> 10<C-w>-
+noremap <Leader><C-Up> 10<C-w>+
+noremap <Leader><C-Right> 20<C-w>>
 
 " Bind <Control> + arrows to move further
 noremap <C-Up> 10<Up>
