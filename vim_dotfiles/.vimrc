@@ -69,7 +69,8 @@ noremap <Home> ^
 inoremap <Home> <Esc>^i
 
 " Bind for saving and :noh
-noremap <Leader>s :noh<CR>:w<CR>
+noremap <Leader>s :w<CR>
+noremap <Leader>h :noh<CR>
 
 " Bind for changing buffers
 noremap <Leader>y :bn<CR>

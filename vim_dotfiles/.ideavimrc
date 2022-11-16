@@ -15,7 +15,8 @@ set so=10
 let mapleader = " "
 
 " Bind for saving and :noh
-noremap <Leader>s :noh<CR>:w<CR>
+noremap <Leader>s :w<CR>
+noremap <Leader>h :noh<CR>
 
 " Bind <Home> button to move to first non-blank character
 noremap <Home> ^
