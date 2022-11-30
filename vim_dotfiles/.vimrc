@@ -95,33 +95,6 @@ noremap <Leader><C-Right> 20<C-w>>
 noremap <C-Up> 10<Up>
 noremap <C-Down> 10<Down>
 
-" Bind keys to insert a matching pair
-" Bind keys to insert speed up adding empty key pair
-" Bind keys to insert a single when two are input
-inoremap ' ''<Left>
-inoremap '' '
-
-inoremap " ""<Left>
-inoremap "" "
-
-inoremap { {}<Left>
-inoremap {<CR> {<CR>}<Esc>O
-inoremap {} {}
-inoremap {{ {
-
-"inoremap [ []<Left>
-"inoremap [] []
-"inoremap [[ [
-
-inoremap ( ()<Left>
-inoremap (<CR> (<CR>)<Esc>O
-inoremap () ()
-inoremap (( (
-
-"inoremap < <><Left>
-"inoremap <> <>
-"inoremap << <
-
 " Binds for copying and deleting whole files
 noremap yaa mtggyG`t
 noremap daa ggdG
