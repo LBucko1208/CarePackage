@@ -143,8 +143,8 @@ vim.keymap.set('n', 'daa', 'ggdG')
 vim.keymap.set('n', '<c-u>', '<c-u>zz')
 vim.keymap.set('n', '<c-d>', '<c-d>zz')
 
--- Mapping for opening NETRW
-vim.keymap.set('n', '<leader>f', ':NERDTreeToggle<cr>')
+-- Mapping for opening NerdTree
+vim.keymap.set('n', '<m-1>', ':NERDTreeToggle<cr>')
 
 
 -- [[ Highlight on yank ]]
