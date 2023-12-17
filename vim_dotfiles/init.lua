@@ -1,3 +1,10 @@
+-- Disable netrw at the very start of your init.lua
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
+-- Set termguicolors to enable highlight groups
+vim.opt.termguicolors = true
+--
 -- Install packer
 local install_path = vim.fn.stdpath 'data' .. '/site/pack/packer/start/packer.nvim'
 local is_bootstrap = false
@@ -11,11 +18,6 @@ require('packer').startup(function(use)
   -- Package manager
   use 'wbthomason/packer.nvim'
 
-  use { -- Autocompletion
-    'hrsh7th/nvim-cmp',
-    requires = { 'hrsh7th/cmp-nvim-lsp', 'L3MON4D3/LuaSnip', 'saadparwaiz1/cmp_luasnip' },
-  }
-
   use 'navarasu/onedark.nvim' -- Theme inspired by Atom
   use 'nvim-lualine/lualine.nvim' -- Fancier statusline
   use 'lukas-reineke/indent-blankline.nvim' -- Add indentation guides even on blank lines
@@ -23,6 +25,8 @@ require('packer').startup(function(use)
   use 'tpope/vim-sleuth' -- Detect tabstop and shiftwidth automatically
 
   use 'preservim/nerdtree'
+
+  use {"akinsho/toggleterm.nvim", tag = '*'}
 
   -- Add custom plugins to packer from ~/.config/nvim/lua/custom/plugins.lua
   local has_plugins, plugins = pcall(require, 'custom.plugins')
@@ -55,6 +59,49 @@ vim.api.nvim_create_autocmd('BufWritePost', {
   group = packer_group,
   pattern = vim.fn.expand '$MYVIMRC',
 })
+
+-- Set lualine as statusline
+-- See `:help lualine.txt`
+require('lualine').setup {
+  options = {
+    icons_enabled = false,
+    theme = 'onedark',
+    component_separators = '|',
+    section_separators = '',
+  },
+}
+
+-- Enable Comment.nvim
+require('Comment').setup()
+
+-- Enable `lukas-reineke/indent-blankline.nvim`
+-- See `:help indent_blankline.txt`
+require('ibl').setup{
+  indent = { char = "┊" },
+}
+
+require('toggleterm').setup({
+  open_mapping = '<M-F12>',
+  direction = 'horizontal',
+  shade_terminals = true
+})
+
+local Terminal  = require('toggleterm.terminal').Terminal
+local lazygit = Terminal:new({
+  cmd = "lazygit",
+  hidden = true,
+  direction = "float",
+})
+
+function _lazygit_toggle()
+  lazygit:toggle()
+end
+
+vim.api.nvim_set_keymap("n", "<M-F11>", "<cmd>lua _lazygit_toggle()<CR>", {noremap = true, silent = true})
+
+-- Close NERDTree when opening file
+vim.g.NERDTreeQuitOnOpen = 1
+
 
 -- [[ Setting options ]]
 -- See `:help vim.o`
@@ -98,6 +145,9 @@ vim.o.so = 10
 -- Set default register to system clipboard
 vim.o.clipboard="unnamedplus,unnamed"
 
+vim.o.shiftwidth=4
+vim.o.tabstop=4
+
 -- [[ Basic Keymaps ]]
 -- Set <space> as the leader key
 -- See `:help mapleader`
@@ -122,11 +172,11 @@ vim.keymap.set('i', '<home>', '<esc>^i')
 vim.keymap.set('n', '<leader>s', ':noh<cr>:w<cr>')
 
 -- Mappings for changing buffers
-vim.keymap.set('n', '<leader>l', ':bp<cr>')
-vim.keymap.set('n', '<leader>y', ':bn<cr>')
+vim.keymap.set('n', '<C-PageUp>', ':bp<cr>')
+vim.keymap.set('n', '<C-PageDown>', ':bn<cr>')
 
 -- Set buffer delete mapping
-vim.keymap.set('n', '<leader>d', ':bd<cr>')
+vim.keymap.set('n', '<C-F4>', ':bd<cr>')
 
 -- Mappings for changing Windows
 vim.keymap.set('n', '<leader>n', '<c-w>h')
@@ -139,12 +189,8 @@ vim.keymap.set('n', 'vaa', 'mtggVG')
 vim.keymap.set('n', 'yaa', 'mtggyG`t')
 vim.keymap.set('n', 'daa', 'ggdG')
 
--- Mapping for autocentering after using half page jump
-vim.keymap.set('n', '<c-u>', '<c-u>zz')
-vim.keymap.set('n', '<c-d>', '<c-d>zz')
-
 -- Mapping for opening NerdTree
-vim.keymap.set('n', '<m-1>', ':NERDTreeToggle<cr>')
+vim.keymap.set('n', '<M-1>', ':NERDTreeToggle<cr>')
 
 
 -- [[ Highlight on yank ]]
@@ -157,97 +203,3 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   group = highlight_group,
   pattern = '*',
 })
-
--- Set lualine as statusline
--- See `:help lualine.txt`
-require('lualine').setup {
-  options = {
-    icons_enabled = false,
-    theme = 'onedark',
-    component_separators = '|',
-    section_separators = '',
-  },
-}
-
--- Enable Comment.nvim
-require('Comment').setup()
-
--- Enable `lukas-reineke/indent-blankline.nvim`
--- See `:help indent_blankline.txt`
-require('ibl').setup{
-  indent = { char = "┊" },
-}
-
--- Enable the following language servers
---  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
---
---  Add any additional override configuration in the following tables. They will be passed to
---  the `settings` field of the server config. You must look up that documentation yourself.
-local servers = {
-  -- clangd = {},
-  -- gopls = {},
-  -- pyright = {},
-  -- rust_analyzer = {},
-  -- tsserver = {},
-
-  sumneko_lua = {
-    Lua = {
-      workspace = { checkThirdParty = false },
-      telemetry = { enable = false },
-    },
-  },
-}
-
---
--- nvim-cmp supports additional completion capabilities, so broadcast that to servers
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
-
--- nvim-cmp setup
-local cmp = require 'cmp'
-local luasnip = require 'luasnip'
-
-cmp.setup {
-  snippet = {
-    expand = function(args)
-      luasnip.lsp_expand(args.body)
-    end,
-  },
-  mapping = cmp.mapping.preset.insert {
-    ['<C-d>'] = cmp.mapping.scroll_docs(-4),
-    ['<C-f>'] = cmp.mapping.scroll_docs(4),
-    ['<C-Space>'] = cmp.mapping.complete(),
-    ['<CR>'] = cmp.mapping.confirm {
-      behavior = cmp.ConfirmBehavior.Replace,
-      select = true,
-    },
-    ['<Tab>'] = cmp.mapping(function(fallback)
-      if cmp.visible() then
-        cmp.select_next_item()
-      elseif luasnip.expand_or_jumpable() then
-        luasnip.expand_or_jump()
-      else
-        fallback()
-      end
-    end, { 'i', 's' }),
-    ['<S-Tab>'] = cmp.mapping(function(fallback)
-      if cmp.visible() then
-        cmp.select_prev_item()
-      elseif luasnip.jumpable(-1) then
-        luasnip.jump(-1)
-      else
-        fallback()
-      end
-    end, { 'i', 's' }),
-  },
-  sources = {
-    { name = 'nvim_lsp' },
-    { name = 'luasnip' },
-  },
-}
-
--- The line beneath this is called `modeline`. See `:help modeline`
--- vim: ts=2 sts=2 sw=2 et
-
--- Enable treesitter on Windows 10
--- require 'nvim-treesitter.install'.compilers = { "x86_64-w64-mingw32-clang", "gcc" }
