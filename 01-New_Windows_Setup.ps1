@@ -1,5 +1,9 @@
+# Set-ExecutionPolicy Unrestricted
+# Set-ExecutionPolicy Restricted
+
 # Install git and clone CarePackage
 winget install -e --id Git.Git
+winget install -e --id JesseDuffield.lazygit
 cd /
 git clone https://github.com/LBucko1208/CarePackage
 
