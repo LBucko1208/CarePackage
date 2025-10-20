@@ -1,0 +1,2 @@
+- "U.S. - Lovro.keylayout" goes in "/Library/Keyboard Layouts"
+- "DefaultKeyBinding.dict" goes in "~/Library/KeyBindings"
