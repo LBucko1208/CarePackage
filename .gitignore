@@ -1,5 +1,6 @@
 **/.vim/pack/vendor/start/
 **/pack/vendor/start/**
+**/.DS_Store
 
 !**/pack/vendor/start/setup-plugins.sh
 
