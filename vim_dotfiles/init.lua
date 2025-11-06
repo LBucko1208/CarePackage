@@ -23,6 +23,7 @@ require('packer').startup(function(use)
   use 'lukas-reineke/indent-blankline.nvim' -- Add indentation guides even on blank lines
   use 'numToStr/Comment.nvim' -- "gc" to comment visual regions/lines
   use 'tpope/vim-sleuth' -- Detect tabstop and shiftwidth automatically
+  use 'tpope/vim-surround'
 
   use 'preservim/nerdtree'
 
@@ -105,6 +106,9 @@ vim.g.NERDTreeQuitOnOpen = 1
 
 -- [[ Setting options ]]
 -- See `:help vim.o`
+
+-- File searching
+vim.o.path = ',,**'
 
 -- Set highlight on search
 vim.o.hlsearch = false
@@ -190,7 +194,7 @@ vim.keymap.set('n', 'yaa', 'mtggyG`t')
 vim.keymap.set('n', 'daa', 'ggdG')
 
 -- Mapping for opening NerdTree
-vim.keymap.set('n', '<M-1>', ':NERDTreeToggle<cr>')
+vim.keymap.set('n', '<c-1>', ':NERDTreeToggle<cr>')
 
 
 -- [[ Highlight on yank ]]
